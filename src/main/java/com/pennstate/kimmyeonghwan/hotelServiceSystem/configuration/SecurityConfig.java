@@ -25,6 +25,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth->auth
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
                         .requestMatchers("/login").permitAll()
+                        .requestMatchers("/index").permitAll()
                         .requestMatchers("/images/**", "/css/**", "/js/**", "/WEB-INF/views/**").permitAll()
                         .anyRequest().authenticated())
                 .build();
